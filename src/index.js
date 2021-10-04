@@ -88,7 +88,7 @@ export const startGame = (numGame) => {
             const num1 = _.random(1,100);
             const num2 = _.random(1,100);
             const operStr = oper();
-            console.log('Question: ' + String(num1) + operStr + String(num2));
+            console.log('Question: ' + String(num1) + ' ' + operStr + ' ' + String(num2));
             const AnswerUser = AnswerStr('Your answer: ');
             const result = calculate(num1, num2, operStr);
             if (isNaN(Number(AnswerUser))) {
