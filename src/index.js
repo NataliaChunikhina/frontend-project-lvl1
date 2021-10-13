@@ -143,23 +143,23 @@ const taskforGame5 = (userName) => {
 
 const startGame = (numGame) => {
   const userName = goWelcome();
-  switch(numGame) {
-    case 1: 
+  switch (numGame) {
+    case 1:
       taskforGame1(userName);
       break;
-    case 2: 
+    case 2:
       taskforGame2(userName);
       break;
-    case 3: 
+    case 3:
       taskforGame3(userName);
       break;
-    case 4: 
+    case 4:
       taskforGame4(userName);
       break;
-    case 5: 
+    case 5:
       taskforGame5(userName);
       break;
-    default: return;
+    default:
   }
 };
 
