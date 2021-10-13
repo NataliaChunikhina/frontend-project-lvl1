@@ -14,3 +14,5 @@ brain-prime:
 	node bin/games/brain-prime.js
 publish:
 	npm publish --dry-run
+lint:
+	npx eslint .
