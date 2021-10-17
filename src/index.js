@@ -1,5 +1,8 @@
-import _ from 'lodash';
 import readlineSync from 'readline-sync';
+
+function randomize(min,max) {
+  return min + Math.floor(Math.random()*(max - min + 1));
+}
 
 const AnswerStr = (QuestionStr) => readlineSync.question(QuestionStr);
 
@@ -26,7 +29,7 @@ const goChecking = (userName, Answer, Result, count) => {
 };
 const even = (n) => (!(n % 2) ? 'yes' : 'no');
 const oper = () => {
-  const n = _.random(1, 3);
+  const n = randomize(1, 3);
   switch (n) {
     case 1: return '*';
     case 2: return '+';
@@ -66,7 +69,7 @@ const taskforGame1 = (userName) => {
   let count = 3;
   console.log('Answer "yes" if the number is even, otherwise answer "no".');
   while (count > 0) {
-    const num = _.random(1, 100);
+    const num = randomize(1, 100);
     console.log(`Question: ${String(num)}`);
     const AnswerUser = AnswerStr('Your answer: ');
     const evenNum = even(num);
@@ -77,8 +80,8 @@ const taskforGame2 = (userName) => {
   let count = 3;
   console.log('What is the result of the expression?');
   while (count > 0) {
-    const num1 = _.random(1, 100);
-    const num2 = _.random(1, 100);
+    const num1 = randomize(1, 100);
+    const num2 = randomize(1, 100);
     const operStr = oper();
     console.log(`Question: ${String(num1)} ${operStr} ${String(num2)}`);
     const AnswerUser = AnswerStr('Your answer: ');
@@ -94,8 +97,8 @@ const taskforGame3 = (userName) => {
   let count = 3;
   console.log('Find the greatest common divisor of given numbers.');
   while (count > 0) {
-    const num1 = _.random(1, 100);
-    const num2 = _.random(1, 100);
+    const num1 = randomize(1, 100);
+    const num2 = randomize(1, 100);
     console.log(`Question: ${String(num1)} ${String(num2)}`);
     const AnswerUser = AnswerStr('Your answer: ');
     const result = gcd(num1, num2);
@@ -111,9 +114,9 @@ const taskforGame4 = (userName) => {
   console.log('What number is missing in the progression?');
   while (count > 0) {
     const arrNum = [];
-    const step = _.random(1, 10);
-    const pos = _.random(0, 9);
-    arrNum.push(_.random(1, 100));
+    const step = randomize(1, 10);
+    const pos = randomize(0, 9);
+    arrNum.push(randomize(1, 100));
     for (let i = 1; i < 10; i += 1) {
       arrNum.push(arrNum[i - 1] + step);
     }
@@ -133,7 +136,7 @@ const taskforGame5 = (userName) => {
   let count = 3;
   console.log('Answer "yes" if given number is prime. Otherwise answer "no".');
   while (count > 0) {
-    const num = _.random(1, 100);
+    const num = randomize(1, 100);
     console.log(`Question: ${String(num)}`);
     const AnswerUser = AnswerStr('Your answer: ');
     const result = isPrime(num);
