@@ -24,8 +24,5 @@ jobs:
     steps:
     
       - uses: actions/checkout@v2
-
-    # Runs a single command using the runners shell
-      - name: run eslint
       - run: make install
       - run: make lint
