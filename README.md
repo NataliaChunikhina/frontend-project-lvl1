@@ -5,30 +5,62 @@
 ### CI Badge
 [![CI](https://github.com/NataliaChunikhina/frontend-project-lvl1/actions/workflows/main.yml/badge.svg)](https://github.com/NataliaChunikhina/frontend-project-lvl1/actions/workflows/main.yml)
 ### install package brain-even, start game, examples of game
-https://asciinema.org/a/0ZIHBsD8JTKisPoCJN3gSxj9y
-[![asciicast](https://asciinema.org/a/ezTJ21N3Nvm2OkICuTC8vtn6q.svg)](https://asciinema.org/a/ezTJ21N3Nvm2OkICuTC8vtn6q)
+[![asciicast](https://asciinema.org/a/l8vM8pKRz8UUqf52IviRg5oOP.svg)](https://asciinema.org/a/l8vM8pKRz8UUqf52IviRg5oOP)
 ### start game brain-calc, examples of game
-https://asciinema.org/a/ezTJ21N3Nvm2OkICuTC8vtn6q
+[![asciicast](https://asciinema.org/a/ezTJ21N3Nvm2OkICuTC8vtn6q.svg)](https://asciinema.org/a/ezTJ21N3Nvm2OkICuTC8vtn6q)
 ### start game brain-gcd, examples of game
-https://asciinema.org/a/qPM3MiJ2iQSdogvV2CUr74Ifd
+[![asciicast](https://asciinema.org/a/qPM3MiJ2iQSdogvV2CUr74Ifd.svg)](https://asciinema.org/a/qPM3MiJ2iQSdogvV2CUr74Ifd)
 ### start game brain-progression, examples of game
-https://asciinema.org/a/WYnFOlstIZsD41mgqmDx38izN
+[![asciicast](https://asciinema.org/a/WYnFOlstIZsD41mgqmDx38izN.svg)](https://asciinema.org/a/WYnFOlstIZsD41mgqmDx38izN)
 ### start game brain-prime, examples of game
-https://asciinema.org/a/ZAneANggcQeiuJ3CbUyLRR4Zb
+[![asciicast](https://asciinema.org/a/ZAneANggcQeiuJ3CbUyLRR4Zb.svg)](https://asciinema.org/a/ZAneANggcQeiuJ3CbUyLRR4Zb)
 
 ### Description
 Проект содержит 5 игр: 
-1. Проверка на четность
-2. Калькулятор
-3. Наибольший общий делитель
-4. Арифметическая прогрессия
-5. Простое число
+1. Проверка на четность(brain-even)
+2. Калькулятор(brain-calc)
+3. Наибольший общий делитель(brain-gcd)
+4. Арифметическая прогрессия(brain-progression)
+5. Простое число(brain-prime)
 
-Максимальное количество раундов для каждой игры: 3
+Максимальное количество раундов для каждой игры: 3.
 В случае неверного ответа игра завершается.
 
 ### Install
 
 ```sh
-npm install brain-even
+Make install
+
+```
+
+### Link
+
+```sh
+npm link
+```
+
+### Starting the game brain-even
+
+```sh
+brain-even
+```
+### Starting the game brain-calc
+
+```sh
+brain-calc
+```
+### Starting the game brain-gcd
+
+```sh
+brain-gcd
+```
+### Starting the game brain-progression
+
+```sh
+brain-progression
+```
+### Starting the game brain-prime
+
+```sh
+brain-prime
 ```
