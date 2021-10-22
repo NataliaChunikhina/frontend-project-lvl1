@@ -4,15 +4,16 @@
 <a href="https://codeclimate.com/github/NataliaChunikhina/frontend-project-lvl1/maintainability"><img src="https://api.codeclimate.com/v1/badges/be979dc9d0870bd9ef54/maintainability" /></a>
 ### CI Badge
 [![CI](https://github.com/NataliaChunikhina/frontend-project-lvl1/actions/workflows/main.yml/badge.svg)](https://github.com/NataliaChunikhina/frontend-project-lvl1/actions/workflows/main.yml)
-### install package brain-even, start game, examples of game
+
+### install package brain-even, starting the game, examples of game
 [![asciicast](https://asciinema.org/a/l8vM8pKRz8UUqf52IviRg5oOP.svg)](https://asciinema.org/a/l8vM8pKRz8UUqf52IviRg5oOP)
-### start game brain-calc, examples of game
+### starting the game brain-calc, examples of game
 [![asciicast](https://asciinema.org/a/ezTJ21N3Nvm2OkICuTC8vtn6q.svg)](https://asciinema.org/a/ezTJ21N3Nvm2OkICuTC8vtn6q)
-### start game brain-gcd, examples of game
+### starting the game brain-gcd, examples of game
 [![asciicast](https://asciinema.org/a/qPM3MiJ2iQSdogvV2CUr74Ifd.svg)](https://asciinema.org/a/qPM3MiJ2iQSdogvV2CUr74Ifd)
-### start game brain-progression, examples of game
+### starting the game brain-progression, examples of game
 [![asciicast](https://asciinema.org/a/WYnFOlstIZsD41mgqmDx38izN.svg)](https://asciinema.org/a/WYnFOlstIZsD41mgqmDx38izN)
-### start game brain-prime, examples of game
+### starting the game brain-prime, examples of game
 [![asciicast](https://asciinema.org/a/ZAneANggcQeiuJ3CbUyLRR4Zb.svg)](https://asciinema.org/a/ZAneANggcQeiuJ3CbUyLRR4Zb)
 
 ### Description
