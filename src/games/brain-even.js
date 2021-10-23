@@ -1,4 +1,3 @@
-import readlineSync from 'readline-sync';
 import goChecking, { randomize } from './common.js';
 
 const IsEven = (n) => (!(n % 2) ? 'yes' : 'no');
@@ -8,9 +7,7 @@ const taskforGameBrainEven = (userName) => {
   while (count > 0) {
     const num = randomize(1, 100);
     console.log(`Question: ${String(num)}`);
-    const AnswerUser = readlineSync.question('Your answer: ');
-    const evenNum = IsEven(num);
-    count = goChecking(userName, AnswerUser, evenNum, count);
+    count = goChecking(userName, IsEven(num), count);
   }
 };
 export default taskforGameBrainEven;

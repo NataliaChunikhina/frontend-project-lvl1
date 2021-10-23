@@ -1,4 +1,3 @@
-import readlineSync from 'readline-sync';
 import goChecking, { randomize } from './common.js';
 
 const isPrime = (n) => {
@@ -15,9 +14,7 @@ const taskforGameBrainPrime = (userName) => {
   while (count > 0) {
     const num = randomize(1, 100);
     console.log(`Question: ${String(num)}`);
-    const AnswerUser = readlineSync.question('Your answer: ');
-    const result = isPrime(num);
-    count = goChecking(userName, AnswerUser, result, count);
+    count = goChecking(userName, isPrime(num), count);
   }
 };
 

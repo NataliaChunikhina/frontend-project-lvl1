@@ -1,4 +1,3 @@
-import readlineSync from 'readline-sync';
 import goChecking, { randomize } from './common.js';
 
 const gcd = (a, b) => {
@@ -15,13 +14,8 @@ const taskforGameBrainGdc = (userName) => {
     const num1 = randomize(1, 100);
     const num2 = randomize(1, 100);
     console.log(`Question: ${String(num1)} ${String(num2)}`);
-    const AnswerUser = readlineSync.question('Your answer: ');
-    const result = gcd(num1, num2);
-    if (Number.isNaN(Number(AnswerUser))) {
-      count = goChecking(userName, AnswerUser, result, count);
-    } else {
-      count = goChecking(userName, Number(AnswerUser), result, count);
-    }
+
+    count = goChecking(userName, gcd(num1, num2), count);
   }
 };
 

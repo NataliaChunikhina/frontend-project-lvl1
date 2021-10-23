@@ -1,5 +1,4 @@
-import readlineSync from 'readline-sync';
-import goChecking, { randomize } from './common.js';
+impor:wt goChecking, { randomize } from './common.js';
 
 const calculate = (num1, num2, operStr) => {
   let result = 0;
@@ -32,13 +31,8 @@ const taskforGameBrainCalc = (userName) => {
     const num2 = randomize(1, 100);
     const operStr = oper();
     console.log(`Question: ${String(num1)} ${operStr} ${String(num2)}`);
-    const AnswerUser = readlineSync.question('Your answer: ');
     const result = calculate(num1, num2, operStr);
-    if (Number.isNaN(Number(AnswerUser))) {
-      count = goChecking(userName, AnswerUser, result, count);
-    } else {
-      count = goChecking(userName, Number(AnswerUser), result, count);
-    }
+    count = goChecking(userName, result, count);
   }
 };
 
