@@ -1,4 +1,4 @@
-impor:wt goChecking, { randomize } from './common.js';
+import goChecking, { randomize } from './common.js';
 
 const calculate = (num1, num2, operStr) => {
   let result = 0;

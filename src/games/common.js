@@ -5,10 +5,9 @@ export const randomize = (min, max) => min + Math.floor(Math.random() * (max - m
 const goChecking = (userName, result, count) => {
   const answerUser = readlineSync.question('Your answer: ');
   let answer = answerUser;
-  if (typeof result === 'number')  {
- 	 answer = Number(answerUser);
+  if (typeof result === 'number') {
+    answer = Number(answerUser);
   }
-
 
   let countNew = count;
   if (answer === result) {
