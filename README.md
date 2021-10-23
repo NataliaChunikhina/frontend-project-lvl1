@@ -5,16 +5,6 @@
 ### CI Badge
 [![CI](https://github.com/NataliaChunikhina/frontend-project-lvl1/actions/workflows/main.yml/badge.svg)](https://github.com/NataliaChunikhina/frontend-project-lvl1/actions/workflows/main.yml)
 
-### install package brain-even, starting the game, examples of game
-[![asciicast](https://asciinema.org/a/l8vM8pKRz8UUqf52IviRg5oOP.svg)](https://asciinema.org/a/l8vM8pKRz8UUqf52IviRg5oOP)
-### starting the game brain-calc, examples of game
-[![asciicast](https://asciinema.org/a/ezTJ21N3Nvm2OkICuTC8vtn6q.svg)](https://asciinema.org/a/ezTJ21N3Nvm2OkICuTC8vtn6q)
-### starting the game brain-gcd, examples of game
-[![asciicast](https://asciinema.org/a/qPM3MiJ2iQSdogvV2CUr74Ifd.svg)](https://asciinema.org/a/qPM3MiJ2iQSdogvV2CUr74Ifd)
-### starting the game brain-progression, examples of game
-[![asciicast](https://asciinema.org/a/WYnFOlstIZsD41mgqmDx38izN.svg)](https://asciinema.org/a/WYnFOlstIZsD41mgqmDx38izN)
-### starting the game brain-prime, examples of game
-[![asciicast](https://asciinema.org/a/ZAneANggcQeiuJ3CbUyLRR4Zb.svg)](https://asciinema.org/a/ZAneANggcQeiuJ3CbUyLRR4Zb)
 
 ### Description
 Проект содержит 5 игр: 
@@ -65,3 +55,13 @@ brain-progression
 ```sh
 brain-prime
 ```
+### install package brain-even, starting the game, examples of game
+[![asciicast](https://asciinema.org/a/l8vM8pKRz8UUqf52IviRg5oOP.svg)](https://asciinema.org/a/l8vM8pKRz8UUqf52IviRg5oOP)
+### starting the game brain-calc, examples of game
+[![asciicast](https://asciinema.org/a/ezTJ21N3Nvm2OkICuTC8vtn6q.svg)](https://asciinema.org/a/ezTJ21N3Nvm2OkICuTC8vtn6q)
+### starting the game brain-gcd, examples of game
+[![asciicast](https://asciinema.org/a/qPM3MiJ2iQSdogvV2CUr74Ifd.svg)](https://asciinema.org/a/qPM3MiJ2iQSdogvV2CUr74Ifd)
+### starting the game brain-progression, examples of game
+[![asciicast](https://asciinema.org/a/WYnFOlstIZsD41mgqmDx38izN.svg)](https://asciinema.org/a/WYnFOlstIZsD41mgqmDx38izN)
+### starting the game brain-prime, examples of game
+[![asciicast](https://asciinema.org/a/ZAneANggcQeiuJ3CbUyLRR4Zb.svg)](https://asciinema.org/a/ZAneANggcQeiuJ3CbUyLRR4Zb)
