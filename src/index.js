@@ -7,30 +7,20 @@ const goWelcome = () => {
   return userName;
 };
 
-const executeGameStep = (userName, gameStep) => {
-  let count = 3;
-  while (count > 0) {
-    const [question, result] = gameStep();
-    console.log(question);
+const executeGameStep = (gameStep) => {
+  const [question, result] = gameStep();
+  console.log(question);
 
-    const answerUser = readlineSync.question('Your answer: ');
-    let answer = answerUser;
-    if (typeof result === 'number') {
-      answer = Number(answerUser);
-    }
+  const answerUser = readlineSync.question('Your answer: ');
+  let answer = answerUser;
+  if (typeof result === 'number') answer = Number(answerUser);
 
-    if (answer === result) {
-      console.log('Correct!');
-      count -= 1;
-      if (count === 0) {
-        console.log(`Congratulations, ${userName}!`);
-      }
-    } else {
-      count = 0;
-      console.log(`'${answerUser}' is wrong answer ;(. Correct answer was '${result}'.`);
-      console.log(`Let's try again, ${userName}!`);
-    }
+  if (answer === result) {
+    console.log('Correct!');
+    return true;
   }
+  console.log(`'${answerUser}' is wrong answer ;(. Correct answer was '${result}'.`);
+  return false;
 };
 
 const startGame = (game) => {
@@ -40,7 +30,18 @@ const startGame = (game) => {
 
   const [gameDescr, gameStep] = game();
   console.log(gameDescr);
-  executeGameStep(userName, gameStep);
+
+  let count = 3;
+  while (count > 0) {
+    const isOk = executeGameStep(gameStep);
+    if (isOk) {
+      count -= 1;
+      if (count === 0) console.log(`Congratulations, ${userName}!`);
+    } else {
+      count = 0;
+      console.log(`Let's try again, ${userName}!`);
+    }
+  }
 };
 
 export default startGame;
