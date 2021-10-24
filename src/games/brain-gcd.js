@@ -7,11 +7,11 @@ const gcd = (a, b) => {
 
   return gcd(b, a % b);
 };
-const taskforGameBrainGdc = () => {
+const taskforGameBrainGdc = (rndMin = 1, rndMax = 100) => {
   const gameDescr = 'Find the greatest common divisor of given numbers.';
   const gameStep = () => {
-    const num1 = randomize(1, 100);
-    const num2 = randomize(1, 100);
+    const num1 = randomize(rndMin, rndMax);
+    const num2 = randomize(rndMin, rndMax);
     const question = `Question: ${String(num1)} ${String(num2)}`;
     const result = gcd(num1, num2);
     return [question, result];
