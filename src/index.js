@@ -9,7 +9,6 @@ const goWelcome = () => {
 
 const executeGameStep = (gameStep) => {
   let count = 3;
-  let isOk = true;
   while (count > 0) {
     const [question, result] = gameStep();
     console.log(question);
@@ -23,12 +22,10 @@ const executeGameStep = (gameStep) => {
       count -= 1;
     } else {
       console.log(`'${answerUser}' is wrong answer ;(. Correct answer was '${result}'.`);
-      count = 0;
-      isOk = false;
+      return false;
     }
   }
-
-  return isOk;
+  return true;
 };
 
 const startGame = (game) => {
