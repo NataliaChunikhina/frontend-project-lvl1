@@ -9,13 +9,15 @@ const goWelcome = () => {
 
 const startGame = (game) => {
   const userName = goWelcome();
+  
+  if (!game) return;
 
-  const [gameDescr, gameStep] = game();
-  console.log(gameDescr);
+  const [descr, runStep] = game();
+  console.log(descr);
 
   let count = 3;
   while (count > 0) {
-    const [question, result] = gameStep();
+    const [question, result] = runStep();
     console.log(question);
 
     const answerUser = readlineSync.question('Your answer: ');
