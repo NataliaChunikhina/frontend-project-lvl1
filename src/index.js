@@ -9,7 +9,7 @@ const goWelcome = () => {
 
 const startGame = (game) => {
   const userName = goWelcome();
-  
+
   if (!game) return;
 
   const [descr, runStep] = game();
