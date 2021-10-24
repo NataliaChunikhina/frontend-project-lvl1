@@ -23,11 +23,11 @@ const oper = () => {
     default: return null;
   }
 };
-const taskforGameBrainCalc = (rndMin = 1, rndMax = 100) => {
+const taskforGameBrainCalc = () => {
   const gameDescr = 'What is the result of the expression?';
   const gameStep = () => {
-    const num1 = randomize(rndMin, rndMax);
-    const num2 = randomize(rndMin, rndMax);
+    const num1 = randomize(1, 100);
+    const num2 = randomize(1, 100);
     const operStr = oper();
     const question = `Question: ${String(num1)} ${operStr} ${String(num2)}`;
     const result = calculate(num1, num2, operStr);
