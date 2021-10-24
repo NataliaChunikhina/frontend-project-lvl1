@@ -27,26 +27,26 @@ const execGameFunc = (gameFunc) => {
 const startGame = (gameTask) => {
   const userName = goWelcome();
 
-  if (!gameTask) return;
+  if (gameTask) {
+    const [gameDescr, gameFunc] = gameTask();
 
-  const [gameDescr, gameFunc] = gameTask();
+    console.log(gameDescr);
 
-  console.log(gameDescr);
+    let count = 3;
+    let gameRes = true;
+    while (count > 0) {
+      gameRes = execGameFunc(gameFunc);
 
-  let count = 3;
-  let gameRes = true;
-  while (count > 0) {
-    gameRes = execGameFunc(gameFunc);
+      if (!gameRes) break;
 
-    if (!gameRes) break;
+      count -= 1;
+    }
 
-    count -= 1;
-  }
-
-  if (gameRes) {
-    console.log(`Congratulations, ${userName}!`);
-  } else {
-    console.log(`Let's try again, ${userName}!`);
+    if (gameRes) {
+      console.log(`Congratulations, ${userName}!`);
+    } else {
+      console.log(`Let's try again, ${userName}!`);
+    }
   }
 };
 
