@@ -24,14 +24,9 @@ const execGameFunc = (gameFunc) => {
   return true;
 };
 
-const startGame = (gameTask) => {
-  if (!gameTask) {
-    goWelcome();
-    return;
-  }
-
+const playGame = (game) => {
   const userName = goWelcome();
-  const [gameDescr, gameFunc] = gameTask();
+  const [gameDescr, gameFunc] = game();
   console.log(gameDescr);
 
   let count = 3;
@@ -49,6 +44,15 @@ const startGame = (gameTask) => {
   } else {
     console.log(`Let's try again, ${userName}!`);
   }
+};
+
+const startGame = (game) => {
+  if (!game) {
+    goWelcome();
+    return;
+  }
+
+  playGame(game);
 };
 
 export default startGame;
