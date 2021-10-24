@@ -1,4 +1,4 @@
-import goChecking, { randomize } from './common.js';
+import { randomize } from './common.js';
 
 const gcd = (a, b) => {
   if (!b) {
@@ -7,16 +7,16 @@ const gcd = (a, b) => {
 
   return gcd(b, a % b);
 };
-const taskforGameBrainGdc = (userName) => {
-  let count = 3;
-  console.log('Find the greatest common divisor of given numbers.');
-  while (count > 0) {
+const taskforGameBrainGdc = ()) => {
+  const descr = 'Find the greatest common divisor of given numbers.';
+  const step = () => {
     const num1 = randomize(1, 100);
     const num2 = randomize(1, 100);
-    console.log(`Question: ${String(num1)} ${String(num2)}`);
-
-    count = goChecking(userName, gcd(num1, num2), count);
+    const question = `Question: ${String(num1)} ${String(num2)}`;
+    const result = gcd(num1, num2);
+    return [question, result];
   }
+  return [descr, step];
 };
 
 export default taskforGameBrainGdc;

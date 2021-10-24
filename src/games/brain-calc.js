@@ -1,4 +1,4 @@
-import goChecking, { randomize } from './common.js';
+import { randomize } from './common.js';
 
 const calculate = (num1, num2, operStr) => {
   let result = 0;
@@ -23,17 +23,17 @@ const oper = () => {
     default: return null;
   }
 };
-const taskforGameBrainCalc = (userName) => {
-  let count = 3;
-  console.log('What is the result of the expression?');
-  while (count > 0) {
+const taskforGameBrainCalc = () => {
+  const descr = 'What is the result of the expression?';
+  const step = () => {
     const num1 = randomize(1, 100);
     const num2 = randomize(1, 100);
     const operStr = oper();
-    console.log(`Question: ${String(num1)} ${operStr} ${String(num2)}`);
+    const question = `Question: ${String(num1)} ${operStr} ${String(num2)}`;
     const result = calculate(num1, num2, operStr);
-    count = goChecking(userName, result, count);
+    return [question, result];
   }
+  return [descr, step];
 };
 
 export default taskforGameBrainCalc;

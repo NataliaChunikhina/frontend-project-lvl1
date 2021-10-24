@@ -1,8 +1,4 @@
 import readlineSync from 'readline-sync';
-import taskforGameBrainEvenPrime from './games/brain-even-prime.js';
-import taskforGameBrainCalc from './games/brain-calc.js';
-import taskforGameBrainGdc from './games/brain-gcd.js';
-import taskforGameBrainProgression from './games/brain-progression.js';
 
 const goWelcome = () => {
   console.log('Welcome to the Brain Games!');
@@ -10,25 +6,35 @@ const goWelcome = () => {
   console.log(`Hello, ${userName}!`);
   return userName;
 };
-const startGame = (numGame) => {
+const startGame = (game) => {
   const userName = goWelcome();
-  switch (numGame) {
-    case 1:
-      taskforGameBrainEvenPrime(userName, 'even');
-      break;
-    case 2:
-      taskforGameBrainCalc(userName);
-      break;
-    case 3:
-      taskforGameBrainGdc(userName);
-      break;
-    case 4:
-      taskforGameBrainProgression(userName);
-      break;
-    case 5:
-      taskforGameBrainEvenPrime(userName, 'prime');
-      break;
-    default:
+  if (!game) return;
+  
+  const [gameDescr, gameStep] = game();
+  console.log(gameDescr);
+  
+  let count = 3;
+  while (count > 0) {
+
+    const [question, result] = gameStep();
+    console.log(question);
+
+    const answerUser = readlineSync.question('Your answer: ');
+    let answer = answerUser;
+    if (typeof result === 'number') {
+      answer = Number(answerUser);
+    }
+
+    if (answer === result) {
+      console.log('Correct!');
+      count -= 1;
+      if (count === 0) {
+      console.log(`Congratulations, ${userName}!`);
+    } else {
+      count = 0;
+      console.log(`'${answerUser}' is wrong answer ;(. Correct answer was '${result}'.`);
+      console.log(`Let's try again, ${userName}!`);
+    }
   }
 };
 
