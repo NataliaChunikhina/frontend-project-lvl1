@@ -7,10 +7,18 @@ const goWelcome = () => {
   return userName;
 };
 
-const executeGameStep = (gameStep) => {
+const startGame = (gameTask) => {
+  const userName = goWelcome();
+
+  if (!gameTask) return;
+
+  const [gameDescr, gameFunc] = gameTask();
+
+  console.log(gameDescr);
+
   let count = 3;
   while (count > 0) {
-    const [question, result] = gameStep();
+    const [question, result] = gameFunc();
 
     console.log(question);
 
@@ -22,28 +30,14 @@ const executeGameStep = (gameStep) => {
     if (answer === result) {
       console.log('Correct!');
       count -= 1;
+      if (count === 0) {
+        console.log(`Congratulations, ${userName}!`);
+      }
     } else {
       console.log(`'${answerUser}' is wrong answer ;(. Correct answer was '${result}'.`);
-      return false;
+      console.log(`Let's try again, ${userName}!`);
+      count = 0;
     }
-  }
-  return true;
-};
-
-const startGame = (game) => {
-  const userName = goWelcome();
-
-  if (!game) return;
-
-  const [gameDescr, gameStep] = game();
-
-  console.log(gameDescr);
-
-  const isOk = executeGameStep(gameStep);
-  if (isOk) {
-    console.log(`Congratulations, ${userName}!`);
-  } else {
-    console.log(`Let's try again, ${userName}!`);
   }
 };
 
