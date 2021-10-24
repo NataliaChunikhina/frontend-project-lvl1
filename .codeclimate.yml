@@ -1,7 +1,8 @@
-engines:
-  duplication:
-    enabled: true
+version: "2" # required to adjust maintainability checks
+checks:
+  similar-code:
     config:
-      languages:
-        javascript:
-          mass_threshold: 50
+      threshold: 50
+  identical-code:
+    config:
+      threshold: 50
