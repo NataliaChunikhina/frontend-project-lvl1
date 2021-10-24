@@ -7,17 +7,10 @@ const goWelcome = () => {
   return userName;
 };
 
-const startGame = (game) => {
-  const userName = goWelcome();
-
-  if (!game) return;
-
-  const [descr, runStep] = game();
-  console.log(descr);
-
+const executeGameStep = (userName, gameStep) => {
   let count = 3;
   while (count > 0) {
-    const [question, result] = runStep();
+    const [question, result] = gameStep();
     console.log(question);
 
     const answerUser = readlineSync.question('Your answer: ');
@@ -38,6 +31,16 @@ const startGame = (game) => {
       console.log(`Let's try again, ${userName}!`);
     }
   }
+};
+
+const startGame = (game) => {
+  const userName = goWelcome();
+
+  if (!game) return;
+
+  const [gameDescr, gameStep] = game();
+  console.log(gameDescr);
+  executeGameStep(userName, gameStep);
 };
 
 export default startGame;
