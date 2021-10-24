@@ -6,16 +6,16 @@ const goWelcome = () => {
   console.log(`Hello, ${userName}!`);
   return userName;
 };
+
 const startGame = (game) => {
   const userName = goWelcome();
   if (!game) return;
-  
+
   const [gameDescr, gameStep] = game();
   console.log(gameDescr);
-  
+
   let count = 3;
   while (count > 0) {
-
     const [question, result] = gameStep();
     console.log(question);
 
@@ -29,7 +29,8 @@ const startGame = (game) => {
       console.log('Correct!');
       count -= 1;
       if (count === 0) {
-      console.log(`Congratulations, ${userName}!`);
+        console.log(`Congratulations, ${userName}!`);
+      }
     } else {
       count = 0;
       console.log(`'${answerUser}' is wrong answer ;(. Correct answer was '${result}'.`);

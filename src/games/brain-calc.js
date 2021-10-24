@@ -24,16 +24,16 @@ const oper = () => {
   }
 };
 const taskforGameBrainCalc = () => {
-  const descr = 'What is the result of the expression?';
-  const step = () => {
+  const gameDescr = 'What is the result of the expression?';
+  const gameStep = () => {
     const num1 = randomize(1, 100);
     const num2 = randomize(1, 100);
     const operStr = oper();
     const question = `Question: ${String(num1)} ${operStr} ${String(num2)}`;
     const result = calculate(num1, num2, operStr);
     return [question, result];
-  }
-  return [descr, step];
+  };
+  return [gameDescr, gameStep];
 };
 
 export default taskforGameBrainCalc;

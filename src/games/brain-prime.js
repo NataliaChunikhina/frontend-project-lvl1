@@ -9,15 +9,15 @@ const isPrime = (n) => {
   return (n > 1) ? 'yes' : 'no';
 };
 const taskforGameBrainPrime = () => {
-  const descr = 'Answer "yes" if the number is prime, otherwise answer "no".';
-  const step = () => {
+  const gameDescr = 'Answer "yes" if the number is prime, otherwise answer "no".';
+  const gameStep = () => {
     const num = randomize(1, 100);
     const question = `Question: ${String(num)}`;
     const result = isPrime(num);
     return [question, result];
-  }
+  };
 
-  return [descr, step];
+  return [gameDescr, gameStep];
 };
 
 export default taskforGameBrainPrime;
