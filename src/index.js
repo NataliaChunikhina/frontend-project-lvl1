@@ -7,6 +7,23 @@ const goWelcome = () => {
   return userName;
 };
 
+const execGameFunc = (gameFunc) => {
+  const [question, result] = gameFunc();
+  const resultStr = result.toString();
+
+  console.log(question);
+
+  const answer = readlineSync.question('Your answer: ');
+
+  if (answer !== resultStr) {
+    console.log(`'${answer}' is wrong answer ;(. Correct answer was '${result}'.`);
+    return false;
+  }
+
+  console.log('Correct!');
+  return true;
+};
+
 const startGame = (gameTask) => {
   const userName = goWelcome();
 
@@ -17,27 +34,19 @@ const startGame = (gameTask) => {
   console.log(gameDescr);
 
   let count = 3;
+  let gameRes = true;
   while (count > 0) {
-    const [question, result] = gameFunc();
+    gameRes = execGameFunc(gameFunc);
 
-    console.log(question);
+    if (!gameRes) break;
 
-    const answerUser = readlineSync.question('Your answer: ');
+    count -= 1;
+  }
 
-    let answer = answerUser;
-    if (typeof result === 'number') answer = Number(answerUser);
-
-    if (answer === result) {
-      console.log('Correct!');
-      count -= 1;
-      if (count === 0) {
-        console.log(`Congratulations, ${userName}!`);
-      }
-    } else {
-      console.log(`'${answerUser}' is wrong answer ;(. Correct answer was '${result}'.`);
-      console.log(`Let's try again, ${userName}!`);
-      count = 0;
-    }
+  if (gameRes) {
+    console.log(`Congratulations, ${userName}!`);
+  } else {
+    console.log(`Let's try again, ${userName}!`);
   }
 };
 
