@@ -11,11 +11,11 @@ const executeGameStep = (gameStep) => {
   let count = 3;
   while (count > 0) {
     const [question, result] = gameStep();
-    
+
     console.log(question);
 
     const answerUser = readlineSync.question('Your answer: ');
-    
+
     let answer = answerUser;
     if (typeof result === 'number') answer = Number(answerUser);
 
