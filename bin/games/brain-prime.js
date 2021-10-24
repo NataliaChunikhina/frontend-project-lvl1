@@ -2,4 +2,4 @@
 import startGame from '../../src/index.js';
 import taskforGameBrainPrime from '../../src/games/brain-prime.js';
 
-startGame(taskforGameBrainPrime);
+startGame(() => taskforGameBrainPrime(1, 100));

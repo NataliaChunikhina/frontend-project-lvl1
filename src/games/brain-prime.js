@@ -8,7 +8,7 @@ const isPrime = (n) => {
   }
   return (n > 1) ? 'yes' : 'no';
 };
-const taskforGameBrainPrime = (rndMin = 1, rndMax = 100) => {
+const taskforGameBrainPrime = (rndMin, rndMax) => {
   const gameDescr = 'Answer "yes" if the number is prime, otherwise answer "no".';
   const gameStep = () => {
     const num = randomize(rndMin, rndMax);
