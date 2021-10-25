@@ -21,10 +21,10 @@ const startGame = (gameDescr, generateGameData) => {
       console.log(`'${answer}' is wrong answer ;(. Correct answer was '${result}'.`);
       gameRes = false;
       break;
-    } else {
-      console.log('Correct!');
-      count -= 1;
     }
+
+    console.log('Correct!');
+    count -= 1;
   }
 
   if (gameRes) {
