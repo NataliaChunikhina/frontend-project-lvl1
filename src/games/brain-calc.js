@@ -31,7 +31,7 @@ const generateGameData = () => {
   const num1 = randomize(1, 100);
   const num2 = randomize(1, 100);
   const operStr = oper();
-  const question = `Question: ${String(num1)} ${operStr} ${String(num2)}`;
+  const question = `${String(num1)} ${operStr} ${String(num2)}`;
   const result = calculate(num1, num2, operStr);
   return [question, result];
 };

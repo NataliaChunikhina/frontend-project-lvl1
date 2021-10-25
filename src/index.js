@@ -13,7 +13,7 @@ const startGame = (gameDescr, generateGameData) => {
     const [question, result] = generateGameData();
     const resultStr = result.toString();
 
-    console.log(question);
+    console.log(`Question: ${question}`);
 
     const answer = readlineSync.question('Your answer: ');
 
