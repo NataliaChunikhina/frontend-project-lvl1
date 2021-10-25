@@ -14,9 +14,7 @@ const gameDescr = 'Answer "yes" if the number is prime, otherwise answer "no".';
 
 const generateGameData = () => {
   const num = randomize(1, 100);
-  const question = `${num}`;
-  const result = isPrime(num);
-  return [question, result];
+  return [`${num}`, isPrime(num)];
 };
 
 export default () => startGame(gameDescr, generateGameData);

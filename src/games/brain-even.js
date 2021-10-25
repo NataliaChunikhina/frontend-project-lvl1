@@ -7,9 +7,7 @@ const gameDescr = 'Answer "yes" if the number is even, otherwise answer "no".';
 
 const generateGameData = () => {
   const num = randomize(1, 100);
-  const question = `${num}`;
-  const result = isEven(num);
-  return [question, result];
+  return [`${num}`, isEven(num)];
 };
 
 export default () => startGame(gameDescr, generateGameData);
