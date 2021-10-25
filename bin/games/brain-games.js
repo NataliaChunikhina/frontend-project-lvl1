@@ -1,4 +1,4 @@
 #!/usr/bin/env node
-import startGame from '../../src/index.js';
+import goWelcome from '../../src/cli.js';
 
-startGame();
+goWelcome();

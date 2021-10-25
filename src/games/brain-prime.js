@@ -1,4 +1,5 @@
-import { randomize } from './common.js';
+import { randomize } from '../utils.js';
+import startGame from '../index.js';
 
 const isPrime = (n) => {
   for (let i = 2; i < n; i += 1) {
@@ -8,16 +9,14 @@ const isPrime = (n) => {
   }
   return (n > 1) ? 'yes' : 'no';
 };
-const taskforGameBrainPrime = () => {
-  const gameDescr = 'Answer "yes" if the number is prime, otherwise answer "no".';
-  const gameStep = () => {
-    const num = randomize(1, 100);
-    const question = `Question: ${String(num)}`;
-    const result = isPrime(num);
-    return [question, result];
-  };
 
-  return [gameDescr, gameStep];
+const gameDescr = 'Answer "yes" if the number is prime, otherwise answer "no".';
+
+const generateGameData = () => {
+  const num = randomize(1, 100);
+  const question = `Question: ${String(num)}`;
+  const result = isPrime(num);
+  return [question, result];
 };
 
-export default taskforGameBrainPrime;
+export default () => startGame(gameDescr, generateGameData);

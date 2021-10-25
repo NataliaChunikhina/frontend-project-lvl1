@@ -1,4 +1,5 @@
-import { randomize } from './common.js';
+import { randomize } from '../utils.js';
+import startGame from '../index.js';
 
 const calculate = (num1, num2, operStr) => {
   let result = 0;
@@ -23,17 +24,16 @@ const oper = () => {
     default: return null;
   }
 };
-const taskforGameBrainCalc = () => {
-  const gameDescr = 'What is the result of the expression?';
-  const gameStep = () => {
-    const num1 = randomize(1, 100);
-    const num2 = randomize(1, 100);
-    const operStr = oper();
-    const question = `Question: ${String(num1)} ${operStr} ${String(num2)}`;
-    const result = calculate(num1, num2, operStr);
-    return [question, result];
-  };
-  return [gameDescr, gameStep];
+
+const gameDescr = 'What is the result of the expression?';
+
+const generateGameData = () => {
+  const num1 = randomize(1, 100);
+  const num2 = randomize(1, 100);
+  const operStr = oper();
+  const question = `Question: ${String(num1)} ${operStr} ${String(num2)}`;
+  const result = calculate(num1, num2, operStr);
+  return [question, result];
 };
 
-export default taskforGameBrainCalc;
+export default () => startGame(gameDescr, generateGameData);
