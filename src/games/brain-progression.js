@@ -13,8 +13,7 @@ const generateGameData = () => {
   }
   const result = arrNum[pos];
   const ProgressionStr = ` ${arrNum.join(' ')} `;
-  const ProgressionStrNew = ProgressionStr.replace(` ${String(result)} `, ' .. ');
-  const question = `${ProgressionStrNew.trim()}`;
+  const question = ProgressionStr.replace(` ${result} `, ' .. ').trim();
   return [question, result];
 };
 
