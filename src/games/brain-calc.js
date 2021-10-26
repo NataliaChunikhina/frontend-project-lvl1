@@ -1,31 +1,26 @@
 import { randomize } from '../utils.js';
 import startGame from '../index.js';
 
+const gameDescr = 'What is the result of the expression?';
+
 const calculate = (num1, num2, operStr) => {
-  let result = 0;
-  if (operStr === '+') {
-    result = num1 + num2;
+  switch (operStr) {
+    case '*':
+      return num1 * num2;
+    case '+':
+      return num1 + num2;
+    case '-':
+      return num1 - num2;
+    default:
+      return null;
   }
-  if (operStr === '-') {
-    result = num1 - num2;
-  }
-  if (operStr === '*') {
-    result = num1 * num2;
-  }
-  return result;
 };
 
 const oper = () => {
-  const n = randomize(1, 3);
-  switch (n) {
-    case 1: return '*';
-    case 2: return '+';
-    case 3: return '-';
-    default: return null;
-  }
+  const operArr = ['*', '+', '-'];
+  const n = randomize(0, 2);
+  return operArr[n];
 };
-
-const gameDescr = 'What is the result of the expression?';
 
 const generateGameData = () => {
   const num1 = randomize(1, 100);

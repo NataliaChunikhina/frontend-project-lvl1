@@ -1,6 +1,8 @@
 import { randomize } from '../utils.js';
 import startGame from '../index.js';
 
+const gameDescr = 'Find the greatest common divisor of given numbers.';
+
 const gcd = (a, b) => {
   if (!b) {
     return a;
@@ -8,8 +10,6 @@ const gcd = (a, b) => {
 
   return gcd(b, a % b);
 };
-
-const gameDescr = 'Find the greatest common divisor of given numbers.';
 
 const generateGameData = () => {
   const num1 = randomize(1, 100);

@@ -3,18 +3,22 @@ import startGame from '../index.js';
 
 const gameDescr = 'What number is missing in the progression?';
 
-const generateGameData = () => {
+const generateProgression = () => {
   const arrNum = [];
   const step = randomize(1, 10);
   const pos = randomize(0, 9);
-  arrNum.push(randomize(1, 100));
+  const base = randomize(1, 100);
+  arrNum.push(String(base));
   for (let i = 1; i < 10; i += 1) {
-    arrNum.push(arrNum[i - 1] + step);
+    if (i === pos) {
+      arrNum.push('..');
+    } else {
+      arrNum.push(String(base + step * i));
+    }
   }
-  const result = arrNum[pos];
-  const ProgressionStr = ` ${arrNum.join(' ')} `;
-  const question = ProgressionStr.replace(` ${result} `, ' .. ').trim();
-  return [question, result];
+  return [arrNum.join(' '), base + step * pos];
 };
+
+const generateGameData = () => generateProgression();
 
 export default () => startGame(gameDescr, generateGameData);

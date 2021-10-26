@@ -1,4 +1,5 @@
 #!/usr/bin/env node
-import goWelcome from '../../src/cli.js';
+import requestAndOutputName from '../../src/cli.js';
 
-goWelcome();
+console.log('Welcome to the Brain Games!');
+requestAndOutputName();

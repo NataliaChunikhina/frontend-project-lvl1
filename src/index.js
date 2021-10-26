@@ -7,31 +7,39 @@ const startGame = (gameDescr, generateGameData) => {
 
   console.log(gameDescr);
 
-  let count = 3;
-  let gameRes = true;
-  while (count > 0) {
+  const count = 3;
+
+  for (let numStep = 1; numStep <= count; numStep += 1) {
     const [question, result] = generateGameData();
-    const resultStr = result.toString();
+    let resultStr = '';
+    switch (typeof result) {
+      case 'boolean':
+        resultStr = result ? 'yes' : 'no';
+        break;
+      case 'number':
+        resultStr = String(result);
+        break;
+      case 'string':
+        resultStr = result;
+        break;
+      default:
+        break;
+    }
 
     console.log(`Question: ${question}`);
 
     const answer = readlineSync.question('Your answer: ');
 
     if (answer !== resultStr) {
-      console.log(`'${answer}' is wrong answer ;(. Correct answer was '${result}'.`);
-      gameRes = false;
-      break;
+      console.log(`'${answer}' is wrong answer ;(. Correct answer was '${resultStr}'.`);
+      console.log(`Let's try again, ${userName}!`);
+      return;
     }
 
     console.log('Correct!');
-    count -= 1;
   }
 
-  if (gameRes) {
-    console.log(`Congratulations, ${userName}!`);
-  } else {
-    console.log(`Let's try again, ${userName}!`);
-  }
+  console.log(`Congratulations, ${userName}!`);
 };
 
 export default startGame;
