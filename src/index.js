@@ -1,5 +1,18 @@
 import readlineSync from 'readline-sync';
 
+const convertToStr = (value) => {
+  switch (typeof value) {
+    case 'boolean':
+      return value ? 'yes' : 'no';
+    case 'number':
+      return String(value);
+    case 'string':
+      return value;
+    default:
+      return null;
+  }
+};
+
 const startGame = (gameDescr, generateGameData) => {
   console.log('Welcome to the Brain Games!');
   const userName = readlineSync.question('May I have your name? ');
@@ -11,20 +24,8 @@ const startGame = (gameDescr, generateGameData) => {
 
   for (let numStep = 1; numStep <= count; numStep += 1) {
     const [question, result] = generateGameData();
-    let resultStr = '';
-    switch (typeof result) {
-      case 'boolean':
-        resultStr = result ? 'yes' : 'no';
-        break;
-      case 'number':
-        resultStr = String(result);
-        break;
-      case 'string':
-        resultStr = result;
-        break;
-      default:
-        break;
-    }
+
+    const resultStr = convertToStr(result);
 
     console.log(`Question: ${question}`);
 
