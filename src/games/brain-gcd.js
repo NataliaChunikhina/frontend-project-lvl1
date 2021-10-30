@@ -15,7 +15,7 @@ const generateGameData = () => {
   const num1 = randomize(1, 100);
   const num2 = randomize(1, 100);
   const question = `${num1} ${num2}`;
-  const result = gcd(num1, num2);
+  const result = String(gcd(num1, num2));
   return [question, result];
 };
 

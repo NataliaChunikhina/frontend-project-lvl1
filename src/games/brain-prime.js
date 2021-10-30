@@ -3,18 +3,18 @@ import startGame from '../index.js';
 
 const gameDescr = 'Answer "yes" if the number is prime, otherwise answer "no".';
 
-const isPrime = (n) => {
-  for (let i = 2; i < n; i += 1) {
-    if (n % i === 0) {
+const isPrime = (num) => {
+  for (let i = 2; i < num; i += 1) {
+    if (num % i === 0) {
       return false;
     }
   }
-  return (n > 1);
+  return (num > 1);
 };
 
 const generateGameData = () => {
   const num = randomize(1, 100);
-  return [String(num), isPrime(num)];
+  return [String(num), isPrime(num) ? 'yes' : 'no'];
 };
 
 export default () => startGame(gameDescr, generateGameData);

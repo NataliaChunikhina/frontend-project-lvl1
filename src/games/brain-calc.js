@@ -3,8 +3,10 @@ import startGame from '../index.js';
 
 const gameDescr = 'What is the result of the expression?';
 
-const calculate = (num1, num2, operStr) => {
-  switch (operStr) {
+const operations = ['*', '+', '-'];
+
+const calculate = (num1, num2, operation) => {
+  switch (operation) {
     case '*':
       return num1 * num2;
     case '+':
@@ -16,18 +18,12 @@ const calculate = (num1, num2, operStr) => {
   }
 };
 
-const oper = () => {
-  const operArr = ['*', '+', '-'];
-  const n = randomize(0, 2);
-  return operArr[n];
-};
-
 const generateGameData = () => {
   const num1 = randomize(1, 100);
   const num2 = randomize(1, 100);
-  const operStr = oper();
-  const question = `${num1} ${operStr} ${num2}`;
-  const result = calculate(num1, num2, operStr);
+  const operation = operations[randomize(0, 2)];
+  const question = `${num1} ${operation} ${num2}`;
+  const result = String(calculate(num1, num2, operation));
   return [question, result];
 };
 
